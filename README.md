@@ -1,11 +1,21 @@
 # Selected Stories
 
 An experimental web text editor with RNN/LSTM capabilities.
-Everything runs on the browser using [deeplearn.js](https://github.com/PAIR-code/deeplearnjs).
+Everything runs in the browser using [deeplearn.js](https://github.com/PAIR-code/deeplearnjs) and [p5ml](https://github.com/ITPNYU/p5-deeplearn-js)
 
-## Train your own models 
+![demo.gif](./public/images/demo.gif)
 
-Training your own models is really easy, just follow [this instructions](https://github.com/ITPNYU/p5-deeplearn-js/tree/master/training/lstm).
+## 
+
+Current trained models:
+
+* [X] Ernest Hemingway
+* [X] Roberto Bolaño
+* [ ] Raymond Carver
+* [ ] Ray Bradbury
+
+
+ - Train your own models: follow [this instructions](https://github.com/ITPNYU/p5-deeplearn-js/tree/master/training/lstm).
 
 ## Inspiration
 

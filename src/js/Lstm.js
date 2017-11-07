@@ -59,7 +59,7 @@ class LSTMGenerator {
   generate(options, callback) {
     options.seed || (options.seed = 'a');
     options.length || (options.length = 20);
-    options.temperature || (options.temperature = 0.5);
+    options.temperature || (options.temperature = 0.7);
     const results = [];
 
     if (!this.checkpointsLoaded) {

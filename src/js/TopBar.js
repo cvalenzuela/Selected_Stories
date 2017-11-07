@@ -6,12 +6,12 @@ class TopBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      models: ['Hemingway', 'Bradbury', 'Carver']
+      models: ['Hemingway', 'Bolaño', 'Bradbury']
     }
   }
 
   onChange(e){
-    console.log(e)
+    
   }
 
   render(){
@@ -21,7 +21,7 @@ class TopBar extends React.Component {
         <ul>
         {this.state.models.map((model,i) => {
           let checked = <input type="radio" id={model} name="selector" onClick={()=>{this.onChange({model})}}/>;
-          i == 0 && (checked = <input type="radio" id={model} name="selector" defaultChecked onClick={()=>{this.onChange({model})}}/>);
+          i === 0 && (checked = <input type="radio" id={model} name="selector" defaultChecked onClick={()=>{this.onChange({model})}}/>);
           return (
             <li key={model}>
               {checked}

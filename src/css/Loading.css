@@ -1,8 +1,7 @@
 #loading{
   position: absolute;
-  right: 0px;
-  bottom: 0px;
-  margin: 3vw;
+  top: 20vh;
+  left: 50%;
 }
 
 #loadingIcon{

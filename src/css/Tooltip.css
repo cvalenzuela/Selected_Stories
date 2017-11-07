@@ -1,7 +1,10 @@
 #Tooltip{
   position: absolute;
-  bottom: 0px;
+  left: 0;
+  bottom: 0;
+  height: 10px;
   width: 100%;
+  overflow:hidden;
   margin: 0 auto;
   text-align: center;
   background: rgba(222, 222, 222, 0.35);
@@ -20,8 +23,8 @@
 }
 
 #showHide{
-  position: absolute;
-  top: -32px;
+  position: relative;
+  top: -10px;
   cursor: pointer;
   left: 4px;
   padding: 10px;
@@ -31,6 +34,23 @@
 
 #showHide p{
   margin: 0px;
+}
+
+#credits{
+  position: absolute;
+  right: 0;
+  top: 0px;
+}
+
+#credits p{
+  margin: 0.8em;
+  padding: 0px;
+}
+
+#credits p a{
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid rgb(66, 66, 66);
 }
 
 .tooltipOption{
