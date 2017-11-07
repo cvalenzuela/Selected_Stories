@@ -17,5 +17,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage" : "https://cvalenzuela.github.io/Selected_Stories/"
+  "homepage" : "https://cvalenzuela.github.io/Selected_Stories/build"
 }
