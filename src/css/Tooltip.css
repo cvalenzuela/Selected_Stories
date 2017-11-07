@@ -1,0 +1,44 @@
+#Tooltip{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(222, 222, 222, 0.35);
+  transition: background 0.25s linear;
+  -webkit-transition: background 0.25s linear;
+  padding: 0.4em 0px;
+}
+
+#Tooltip p{
+  font-size: 10px;
+}
+
+#iconsAndImages{
+  position: relative;
+  margin: 0 auto;
+}
+
+#showHide{
+  position: absolute;
+  top: -32px;
+  cursor: pointer;
+  left: 4px;
+  padding: 10px;
+  margin: 0px;
+  background: rgba(222, 222, 222, 0.35);
+}
+
+#showHide p{
+  margin: 0px;
+}
+
+.tooltipOption{
+  display: inline-block;
+  margin: 0px 2.4em;
+}
+
+.tooltipImage{
+  width: 65px;
+  opacity: 0.7;
+}
