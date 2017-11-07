@@ -5,7 +5,9 @@ Everything runs in the browser using [deeplearn.js](https://github.com/PAIR-code
 
 ![demo.gif](./public/images/demo.gif)
 
-## 
+Try it [here](https://cvalenzuela.github.io/Selected_Stories/)!
+
+## Models
 
 Current trained models:
 
