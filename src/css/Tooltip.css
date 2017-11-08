@@ -8,8 +8,8 @@
   margin: 0 auto;
   text-align: center;
   background: rgba(222, 222, 222, 0.35);
-  transition: background 0.25s linear;
-  -webkit-transition: background 0.25s linear;
+  transition: height 0.10s linear;
+  -webkit-transition: height 0.10s linear;
   padding: 0.4em 0px;
 }
 
@@ -20,6 +20,7 @@
 #iconsAndImages{
   position: relative;
   margin: 0 auto;
+  
 }
 
 #showHide{

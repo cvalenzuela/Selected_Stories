@@ -35,8 +35,7 @@ class TextEditor extends React.Component {
     ]);
     this.state = {
       placeholder: 'Write something...',
-      model: new LSTMGenerator('./models/hemingway/'),
-      selectedModel: './models/hemingway/',
+      model: new LSTMGenerator(props.model),
       generated: '',
       timer: setTimeout(()=>{}, 0),
       shouldAutoGenerate: true,
@@ -88,6 +87,14 @@ class TextEditor extends React.Component {
       };
     }
     this.setState(newState);
+  }
+
+
+  componentWillReceiveProps(props){
+    this.setState({
+      model: new LSTMGenerator(props.model)
+    });
+    console.log(props)
   }
 
   // When the component mounts, set focus to it
@@ -292,20 +299,22 @@ class TextEditor extends React.Component {
   
   render() {
     return (
-      <div style={styles.editor} onClick={this.focus}>
-        <Editor
-        ref={this.setDomEditorRef}
-        handleBeforeInput={this.handleBeforeInput}
-        editorState={this.state.editorState} 
-        onChange={this.onChange} 
-        onRightArrow={this.handleRightArrow}
-        onEscape={this.handleEsc}
-        onTab={this.handleTab}
-        handleBeforeInput={this.handleBeforeInput}
-        plugins={plugins}
-        placeholder={this.state.placeholder}/>
-        <SideToolbar />
-        <Loading isLoading={this.state.isLoading} isUserWritting={this.state.isUserWritting}/>
+      <div>
+        <div style={styles.editor} onClick={this.focus}>
+          <Editor
+          ref={this.setDomEditorRef}
+          handleBeforeInput={this.handleBeforeInput}
+          editorState={this.state.editorState} 
+          onChange={this.onChange} 
+          onRightArrow={this.handleRightArrow}
+          onEscape={this.handleEsc}
+          onTab={this.handleTab}
+          handleBeforeInput={this.handleBeforeInput}
+          plugins={plugins}
+          placeholder={this.state.placeholder}/>
+          <SideToolbar />
+          <Loading isLoading={this.state.isLoading} isUserWritting={this.state.isUserWritting}/>
+        </div>
       </div>
     );
   }

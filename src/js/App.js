@@ -7,9 +7,8 @@ cv965@nyu.edu
 */
 
 import React, { Component } from 'react';
-import TextEditor from './Editor';
-import TopBar from './TopBar';
 import Tooltip from './Tooltip';
+import TopBar from './TopBar';
 
 class App extends Component {
   constructor() {
@@ -32,9 +31,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TopBar />
-        <TextEditor />
-        <Tooltip />
+        <TopBar/>
+        <Tooltip/>
       </div>
     );
   }
