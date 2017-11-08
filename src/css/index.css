@@ -10,10 +10,20 @@ html {
 }
 
 body {
-  margin: 0 0 100px; /* bottom = footer height */
+  margin: 0 0 170px; /* bottom = footer height */
   border: none;
-  background: #ECE9E6; 
+  /* background: #ECE9E6; 
   background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  
-  background: linear-gradient(to right, #FFFFFF, #ECE9E6); 
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);  */
   text-align: center;
+}
+
+#safari{
+  position: relative;
+  text-align: center;
+  top: -24vh;
+  background: rgba(247, 18, 42, 0.2);
+  display: inline-block;
+  padding: 3px;
+  margin: 0 auto;
 }

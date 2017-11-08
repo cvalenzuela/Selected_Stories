@@ -22,8 +22,8 @@ const { SideToolbar } = sideToolbarPlugin;
 const plugins = [sideToolbarPlugin];
 
 // LSTM Parameters
-const length = 128; // The length of the generated result
-const seedSize = 128;  // The size of the seed to feed the LSTM
+const length = 30; // The length of the generated result
+const seedSize = 30;  // The size of the seed to feed the LSTM
 
 class TextEditor extends React.Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class TextEditor extends React.Component {
     const currentText = editorState.getCurrentContent().getPlainText();
     let newState;
     // If the lenght has more than 5 chars and we are ready to start generating
-    if(currentText.length > 5 && this.state.shouldAutoGenerate){
+    if(currentText.length > 30 && this.state.shouldAutoGenerate){
       newState = {
         editorState,
         isLoading: true,
@@ -94,7 +94,6 @@ class TextEditor extends React.Component {
     this.setState({
       model: new LSTMGenerator(props.model)
     });
-    console.log(props)
   }
 
   // When the component mounts, set focus to it
@@ -130,7 +129,7 @@ class TextEditor extends React.Component {
     } else {
       seed = currentText.substring(currentText.length - seedSize ,currentText.length);
     }
-    let options = {seed: seed, length: length};
+    let options = {seed: seed, length: length, temperature: 0.44};
 
     // Query the model
     this.state.model.generate(options, output => {

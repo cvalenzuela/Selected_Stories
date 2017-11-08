@@ -13,6 +13,20 @@
   padding: 0.4em 0px;
 }
 
+@media only screen and (max-width: 855px) {
+  #icons {
+      display: none;
+  }
+  #explanation{
+    width: 50% !important;
+  }
+}
+
+#dots{
+  width: 30px;
+  margin: 5px 0px;
+}
+
 #Tooltip p{
   font-size: 10px;
 }
@@ -20,7 +34,6 @@
 #iconsAndImages{
   position: relative;
   margin: 0 auto;
-  
 }
 
 #showHide{
@@ -28,9 +41,28 @@
   top: -10px;
   cursor: pointer;
   left: 4px;
-  padding: 10px;
   margin: 0px;
   background: rgba(222, 222, 222, 0.35);
+}
+
+#explanation{
+  position: absolute;
+  width: 23vw;
+  float: left;
+  text-align: left;
+  left: 10px;
+}
+
+#explanation p{
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#explanation p a{
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid rgb(66, 66, 66);
 }
 
 #showHide p{
@@ -38,14 +70,16 @@
 }
 
 #credits{
+  text-align: right;
   position: absolute;
   right: 0;
-  top: 0px;
+  top: 2vh;
 }
 
 #credits p{
   margin: 0.8em;
   padding: 0px;
+  font-size: 11px;
 }
 
 #credits p a{

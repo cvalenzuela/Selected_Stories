@@ -1,0 +1,10 @@
+#mobile{
+  margin-top: 60%;
+  display: inline-block;
+}
+
+#mobile p{
+  background: rgba(88, 222, 179, 0.2);
+  display: inline;
+  padding: px;
+}

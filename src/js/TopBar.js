@@ -16,8 +16,12 @@ class TopBar extends React.Component {
         path: 'bolano',
         active: true
       },{
-        displayName: 'Bradbury',
-        path: 'bradbury',
+        displayName: 'Camus',
+        path: 'camus',
+        active: false
+      },{
+        displayName: 'Kafka',
+        path: 'kafka',
         active: false
       }],
       currentModel: `./models/hemingway/`
