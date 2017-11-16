@@ -22,7 +22,7 @@ const { SideToolbar } = sideToolbarPlugin;
 const plugins = [sideToolbarPlugin];
 
 // LSTM Parameters
-const length = 30; // The length of the generated result
+const length = 120; // The length of the generated result
 const seedSize = 30;  // The size of the seed to feed the LSTM
 
 class TextEditor extends React.Component {
@@ -129,12 +129,13 @@ class TextEditor extends React.Component {
     } else {
       seed = currentText.substring(currentText.length - seedSize ,currentText.length);
     }
-    let options = {seed: seed, length: length, temperature: 0.44};
+    let options = {seed: seed, length: length, temperature: 0.45};
 
     // Query the model
     this.state.model.generate(options, output => {
       // Just in case we dont get the same length we requested
-      let result = output.generated.substring(0, length); 
+      //let result = output.generated.substring(0, length); 
+      let result = output.generated.split('.')[0] + '.'
       callback(result);
     });
   }
