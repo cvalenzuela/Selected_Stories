@@ -8,16 +8,16 @@ class TopBar extends React.Component {
     super(props);
     this.state = {
       models: [{
+        displayName: 'Hemingway',
+        path: 'hemingway',
+        active: true
+      },{
         displayName: 'Woolf',
         path: 'woolf',
         active: true
       },{
         displayName: 'Bolaño',
         path: 'bolano',
-        active: true
-      },{
-        displayName: 'Hemingway',
-        path: 'hemingway',
         active: true
       },{
         displayName: 'Austen',

@@ -22,7 +22,7 @@ const { SideToolbar } = sideToolbarPlugin;
 const plugins = [sideToolbarPlugin];
 
 // LSTM Parameters
-const length = 120; // The length of the generated result
+const length = 37; // The length of the generated result
 const seedSize = 30;  // The size of the seed to feed the LSTM
 
 class TextEditor extends React.Component {
@@ -37,6 +37,7 @@ class TextEditor extends React.Component {
       placeholder: 'Write something...',
       model: new LSTMGenerator(props.model),
       generated: '',
+      generatedSize: 0,
       timer: setTimeout(()=>{}, 0),
       shouldAutoGenerate: true,
       shouldRegenerate: false,
@@ -64,7 +65,7 @@ class TextEditor extends React.Component {
     const currentText = editorState.getCurrentContent().getPlainText();
     let newState;
     // If the lenght has more than 5 chars and we are ready to start generating
-    if(currentText.length > 30 && this.state.shouldAutoGenerate){
+    if(currentText.length > 5 && this.state.shouldAutoGenerate){
       newState = {
         editorState,
         isLoading: true,
@@ -124,18 +125,24 @@ class TextEditor extends React.Component {
     const currentText = editorState.getCurrentContent().getPlainText();
     let seed;
     // Feed at max the defined chars
-    if(currentText.length < seedSize){ 
+    if(currentText.length < seedSize){
       seed = currentText;
     } else {
-      seed = currentText.substring(currentText.length - seedSize ,currentText.length);
+      const currentGenerated = currentText.indexOf(this.state.generated);
+      if(currentGenerated > 0){
+        seed = currentText.substring(0 ,currentGenerated);
+      } else {
+        seed = currentText;
+      }
     }
-    let options = {seed: seed, length: length, temperature: 0.45};
+    let options = {seed: seed, length: length, temperature: 0.6};
 
     // Query the model
     this.state.model.generate(options, output => {
       // Just in case we dont get the same length we requested
       //let result = output.generated.substring(0, length); 
-      let result = output.generated.split('.')[0] + '.'
+      // const result = output.generated.split('.')[0] + '.'
+      const result = output.generated;
       callback(result);
     });
   }
@@ -165,9 +172,10 @@ class TextEditor extends React.Component {
         shouldAutoGenerate: false,
         shouldRegenerate: true,
         generated: resultText,
+        generatedSize: resultText.length,
         isUserWritting: false,
         isLoading: false
-      }, ()=> {this.moveCursor(anchorKey,anchorOffset)});
+      }, ()=> {this.moveCursor(anchorKey,anchorOffset);});
     });
   }
 
@@ -220,7 +228,7 @@ class TextEditor extends React.Component {
       let selectionToReplace = SelectionState.createEmpty(anchorKey).merge({  
         anchorKey,
         anchorOffset: anchorOffset,
-        focusOffset: anchorOffset + length
+        focusOffset: anchorOffset + this.state.generatedSize
       });
       let newContentState = Modifier.applyEntity(contentState, selectionToReplace, null);
       this.setState({
