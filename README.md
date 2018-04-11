@@ -4,7 +4,9 @@ An experimental web text editor that runs a LSTM model while you write to sugges
 
 Everything runs in the browser using [deeplearn.js](https://github.com/PAIR-code/deeplearnjs) and [p5ml](https://github.com/ITPNYU/p5-deeplearn-js).
 
-![demo.gif](./public/images/newdemo.gif)
+<p align="center">
+<img src="./public/images/newdemo.gif" />
+</p>
 
 Try it [here](https://cvalenzuela.github.io/Selected_Stories/)!
 
