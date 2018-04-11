@@ -36,3 +36,7 @@ This project was built with the following dependencies:
 ```
 yarn start
 ```
+
+# Licence
+
+MIT

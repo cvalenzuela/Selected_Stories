@@ -1,6 +1,7 @@
 {
   "name": "selectedstories",
   "version": "0.0.1",
+  "licence": "MIT",
   "private": false,
   "dependencies": {
     "deeplearn": "0.4.2",
